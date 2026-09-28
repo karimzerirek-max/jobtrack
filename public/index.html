@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JobTrack</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div>
+      <h1>JobTrack</h1>
+      <p>Gestiona tus candidaturas de empleo</p>
+    </div>
+
+    <button id="addJobButton">
+      + Nueva candidatura
+    </button>
+
+  </header>
+
+  <main class="container">
+
+    <section class="stats">
+
+      <div class="card">
+        <h3>Total</h3>
+        <p id="totalCount">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Solicitadas</h3>
+        <p id="appliedCount">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Entrevistas</h3>
+        <p id="interviewCount">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Ofertas</h3>
+        <p id="offerCount">0</p>
+      </div>
+
+    </section>
+
+    <section class="form-section">
+
+      <h2>Añadir candidatura</h2>
+
+      <form id="jobForm">
+
+        <input
+          type="text"
+          id="company"
+          placeholder="Empresa"
+          required
+        >
+
+        <input
+          type="text"
+          id="position"
+          placeholder="Puesto"
+          required
+        >
+
+        <select id="status">
+
+          <option value="Aplicada">
+            Aplicada
+          </option>
+
+          <option value="Entrevista">
+            Entrevista
+          </option>
+
+          <option value="Oferta">
+            Oferta
+          </option>
+
+          <option value="Rechazada">
+            Rechazada
+          </option>
+
+        </select>
+
+        <input
+          type="date"
+          id="date"
+          required
+        >
+
+        <button type="submit">
+          Guardar candidatura
+        </button>
+
+      </form>
+
+    </section>
+
+    <section class="jobs-section">
+
+      <div class="jobs-header">
+
+        <h2>Mis candidaturas</h2>
+
+        <div class="filters">
+
+          <button onclick="filterJobs('Todas')">
+            Todas
+          </button>
+
+          <button onclick="filterJobs('Aplicada')">
+            Aplicadas
+          </button>
+
+          <button onclick="filterJobs('Entrevista')">
+            Entrevistas
+          </button>
+
+          <button onclick="filterJobs('Oferta')">
+            Ofertas
+          </button>
+
+          <button onclick="filterJobs('Rechazada')">
+            Rechazadas
+          </button>
+
+        </div>
+
+      </div>
+
+      <div id="jobsContainer">
+
+        <p class="empty-message">
+          Todavía no tienes candidaturas.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
